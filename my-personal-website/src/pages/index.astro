@@ -16,11 +16,11 @@ const projects = [
     details: "Built a real-time route optimization web application using Next.js and React.js that calculates fastest alternate routes around traffic disruptions and road closures using custom pathfinding algorithms. Designed geo-spatial computing backend with Python for processing real-time map data and user-drawn polygon disruptions, implementing caching mechanisms for optimized route calculations. Integrated CockroachDB distributed database for high-availability storage of route data, user inputs, and disruption updates with geo-spatial indexing for fast queries. Implemented RESTful API endpoints for CRUD operations on map disruptions, enabling users to create, update, and delete custom road closures with real-time map visualization."
   },
   {
-    title: "Smart Home Automation Platform",
-    description: "Stealth project in development - Advanced IoT home automation solution",
-    technologies: ["IoT", "Cloud Computing", "Real-time Systems"],
-    link: "#",
-    details: "Currently developing an innovative home automation platform focused on seamless device integration and intelligent automation. Leveraging cutting-edge IoT protocols and cloud infrastructure to create a next-generation smart home experience. More details coming soon."
+    title: "Fashion Tech Social Platform",
+    description: "Stealth project - Revolutionary fashion tech social media and digital wardrobe management",
+    technologies: ["React Native", "Real-time Sync", "Social Networking", "Computer Vision"],
+    link: "contact",
+    details: "Building an innovative fashion tech social media platform that empowers users to share, collaborate, and create vibrant fashion communities. The app features real-time digital wardrobe management, allowing users to catalog their clothing items, plan outfits, and discover fashion inspiration from their network. With advanced styling tools and community features, users can showcase their personal style, get feedback, and connect with like-minded fashion enthusiasts. The platform combines social networking with practical wardrobe organization, making fashion more accessible and collaborative. This is a stealth project - contact me for an exclusive demo and to learn more about upcoming features."
   }
 ];
 ---
@@ -49,6 +49,47 @@ const projects = [
       color: #1a1a1a;
       background: #0f0f0f;
       overflow-x: hidden;
+    }
+
+    /* Top Navigation Bar */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 30px 40px;
+      z-index: 1000;
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 1.3em;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .social-icon:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    .social-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
     }
 
     /* Animated Background */
@@ -519,6 +560,172 @@ const projects = [
       border: none;
     }
 
+    /* Contact Modal */
+    .contact-modal-content {
+      height: auto;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .contact-container {
+      padding: 60px 50px;
+    }
+
+    .contact-title {
+      font-size: 2.5em;
+      font-weight: 800;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+    }
+
+    .contact-subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 1.1em;
+      margin-bottom: 40px;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .contact-item {
+      background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+      padding: 25px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border: 2px solid rgba(102, 126, 234, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      border-color: rgba(102, 126, 234, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+    }
+
+    .contact-icon {
+      font-size: 2.5em;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px;
+      flex-shrink: 0;
+    }
+
+    .contact-details h3 {
+      font-size: 1.1em;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+
+    .contact-details a {
+      color: #667eea;
+      text-decoration: none;
+      font-size: 1.05em;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .contact-details a:hover {
+      color: #764ba2;
+      text-decoration: underline;
+    }
+
+    .contact-divider {
+      text-align: center;
+      margin: 40px 0;
+      position: relative;
+    }
+
+    .contact-divider::before,
+    .contact-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+    }
+
+    .contact-divider::before {
+      left: 0;
+    }
+
+    .contact-divider::after {
+      right: 0;
+    }
+
+    .contact-divider span {
+      background: white;
+      padding: 0 20px;
+      color: #999;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      font-size: 1.05em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 1em;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+      background: #fafafa;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #667eea;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-submit {
+      width: 100%;
+      padding: 16px;
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -587,6 +794,32 @@ const projects = [
         padding: 14px 28px;
         font-size: 0.95em;
       }
+
+      .contact-info {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-container {
+        padding: 40px 25px;
+      }
+
+      .contact-title {
+        font-size: 2em;
+      }
+
+      .top-nav {
+        padding: 20px 20px;
+      }
+
+      .social-icon {
+        width: 45px;
+        height: 45px;
+      }
+
+      .social-icon svg {
+        width: 20px;
+        height: 20px;
+      }
     }
 
     /* Scroll animations */
@@ -605,6 +838,20 @@ const projects = [
 <body>
   <div class="background"></div>
 
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <a href="https://linkedin.com/in/tarun-murali" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    </a>
+    <a href="https://github.com/tarunm59-2" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+      </svg>
+    </a>
+  </nav>
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
@@ -615,6 +862,7 @@ const projects = [
         <div class="hero-buttons">
           <button class="btn btn-primary" id="resumeBtn">View Resume</button>
           <a href="#projects" class="btn btn-secondary">See My Work</a>
+          <button class="btn btn-secondary" id="contactBtn">Contact Me</button>
         </div>
       </div>
       <div class="photo-container">
@@ -651,8 +899,8 @@ const projects = [
             <div class="project-content">
               <div class="project-inner">
                 <p class="project-details">{project.details}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-link">
-                  View Project →
+                <a href={project.link} target={project.link === 'contact' ? '_self' : '_blank'} rel="noopener noreferrer" class="project-link" data-action={project.link === 'contact' ? 'open-contact' : ''}>
+                  {project.link === 'contact' ? 'Contact for Demo →' : 'View Project →'}
                 </a>
               </div>
             </div>
@@ -672,6 +920,58 @@ const projects = [
       <button class="modal-close" id="closeModal">×</button>
       <div class="pdf-container">
         <iframe src="/resume.pdf" title="Resume"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content contact-modal-content">
+      <button class="modal-close" id="closeContactModal">×</button>
+      <div class="contact-container">
+        <h2 class="contact-title">Get In Touch</h2>
+        <p class="contact-subtitle">I'd love to hear from you! Feel free to reach out using any of the methods below.</p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <a href="mailto:tmurali@terpmail.umd.edu">tmurali@terpmail.umd.edu</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div class="contact-details">
+              <h3>Phone</h3>
+              <a href="tel:+13017687277">(301) 768-7277</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-divider">
+          <span>Or send me a message</span>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Your message here..." rows="5"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary contact-submit">Send Message</button>
+        </form>
       </div>
     </div>
   </div>
@@ -721,6 +1021,66 @@ const projects = [
       if (e.key === 'Escape' && modal.classList.contains('active')) {
         modal.classList.remove('active');
       }
+    });
+
+    // Contact Modal functionality
+    const contactModal = document.getElementById('contactModal');
+    const contactBtn = document.getElementById('contactBtn');
+    const closeContactModal = document.getElementById('closeContactModal');
+
+    contactBtn.addEventListener('click', () => {
+      contactModal.classList.add('active');
+    });
+
+    closeContactModal.addEventListener('click', () => {
+      contactModal.classList.remove('active');
+    });
+
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) {
+        contactModal.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+        contactModal.classList.remove('active');
+      }
+    });
+
+    // Contact Form submission
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(contactForm);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const message = formData.get('message');
+
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Message from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      const mailtoLink = `mailto:tmurali@terpmail.umd.edu?subject=${subject}&body=${body}`;
+
+      // Open email client
+      window.location.href = mailtoLink;
+
+      // Reset form
+      contactForm.reset();
+
+      // Close modal after a short delay
+      setTimeout(() => {
+        contactModal.classList.remove('active');
+      }, 500);
+    });
+
+    // Handle project links that should open contact modal
+    document.querySelectorAll('.project-link[data-action="open-contact"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        contactModal.classList.add('active');
+      });
     });
 
     // Scroll animations
