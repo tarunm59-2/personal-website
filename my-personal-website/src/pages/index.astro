@@ -2,11 +2,11 @@
 // src/pages/index.astro
 const projects = [
   {
-    title: "SceneForge - AI-Powered 3D World Generator",
-    description: "Revolutionary platform that transforms natural language into immersive, walkable 3D environments",
-    technologies: ["Next.js", "Three.js", "MCP Servers", "Claude AI", "Real-time 3D"],
+    title: "SceneForge - Smart City Infrastructure Visualizer",
+    description: "Interactive 3D city visualization platform for utilities, public transport, and infrastructure management",
+    technologies: ["Three.js", "Graph Databases", "Blender", "MCP Servers", "Real-time Simulation"],
     link: "https://sceneforge-nu.vercel.app/",
-    details: "Building the future of spatial computing and creative expression with SceneForge - an AI-powered platform that transforms your imagination into reality. Simply describe any scene in natural language, and watch as advanced AI generates a fully immersive 3D environment you can explore and navigate in real-time. Whether you're envisioning a cyberpunk cityscape, a serene forest clearing, or an alien planet, SceneForge brings your creative visions to life with unprecedented ease. Currently in active development with an exclusive waitlist - join early adopters shaping the next generation of AI-driven world building. Perfect for game developers, architects, storytellers, and creative professionals looking to rapidly prototype environments or explore new design concepts. The platform leverages Next.js for seamless performance, Three.js for stunning real-time 3D rendering, and MCP servers for intelligent scene generation, democratizing 3D content creation for everyone."
+    details: "Coming Soon - SceneForge visualizes entire cities in 3D, making complex urban infrastructure interactive and understandable. Click on any utility (water, gas, electric), public transport system (bus, train, metro), or infrastructure element to see real-time data and impact analysis. Powered by graph database technology to show how disruptions cascade through interconnected systems - from traffic congestion to service outages. Perfect for municipal planners, utility companies, and emergency response teams. Join the waitlist now to be among the first to experience intelligent city visualization. Contact me for an exclusive demo and early access details."
   },
   {
     title: "Introview - AI-Powered Interview Platform",
@@ -56,6 +56,7 @@ const projects = [
       color: #1a1a1a;
       background: #0f0f0f;
       overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
     }
 
     /* Top Navigation Bar */
@@ -138,6 +139,7 @@ const projects = [
     /* Header/Hero Section */
     .hero {
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -446,6 +448,8 @@ const projects = [
 
     .project-item.active .project-content {
       max-height: 600px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .project-inner {
@@ -780,12 +784,22 @@ const projects = [
     }
 
     @media (max-width: 640px) {
+      .hero {
+        min-height: auto;
+        padding: 80px 20px 60px;
+      }
+
       .hero-text h1 {
         font-size: 2.2em;
       }
 
       .hero-text .tagline {
         font-size: 1.1em;
+      }
+
+      .hero-text .subtitle {
+        font-size: 1em;
+        margin-bottom: 30px;
       }
 
       .section-content {
@@ -800,6 +814,11 @@ const projects = [
       .btn {
         padding: 14px 28px;
         font-size: 0.95em;
+        width: 100%;
+      }
+
+      .hero-buttons {
+        width: 100%;
       }
 
       .contact-info {
@@ -816,6 +835,7 @@ const projects = [
 
       .top-nav {
         padding: 20px 20px;
+        gap: 15px;
       }
 
       .social-icon {
@@ -826,6 +846,27 @@ const projects = [
       .social-icon svg {
         width: 20px;
         height: 20px;
+      }
+
+      .section {
+        padding: 60px 20px;
+      }
+
+      .section-title {
+        font-size: 2em;
+      }
+
+      .photo-container {
+        max-width: 300px;
+      }
+
+      .project-item.active .project-content {
+        max-height: 300px;
+      }
+
+      .project-details {
+        font-size: 0.95em;
+        line-height: 1.7;
       }
     }
 
